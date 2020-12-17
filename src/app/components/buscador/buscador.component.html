@@ -11,21 +11,10 @@
   <!--  SI          NO  -->
   <!-- true Else (false) -->
   <!--'123' == 123 (comparativo) vs 2 === '2' (comparativo restrictivo).//Mandaría un false. -->
-
-<div class="card-columns fadeIn animated">
+  
+  <div class="card-columns fadeIn animated">
     <!-- La declaración let = index contabiliza cada emisión del *ngFor. -->
-      <div class="card" *ngFor= "let Hero of Resultados; let i = index">
-        <img src="{{Hero.img}}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{Hero.nombre}}</h5>
-          <p class="card-text">{{Hero.bio.substring(0,30)}}</p>
-          <small>{{Hero.aparicion}}</small>  
-          <!-- <small>{{Hero.casa}}</small> -->
-      </div>
-      <!--[routerLink]= "['/hero', i] La coma después de hero la usamos para pasar 
-        como parámetro el índice como parámetros de la ruta. -->
-        <button (click)= "Navegar(i)" class="btn btn-outline-primary btn-block">Ver más...</button>
-      </div>
-  </div>
+    <app-hero-card [PadreHero]="Hero" [Index]="Hero.index" *ngFor="let Hero of Resultados; let i = index"></app-hero-card>
+    </div>
   </div>
   

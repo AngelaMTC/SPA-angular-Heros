@@ -75,11 +75,12 @@ public searchHeros(termino){
   let Resultados: any = [];
   termino = termino.toLowerCase();
   // Usar un ciclo para comparar el término de búsqueda contra la propiedad de nombre de c/heroe:
-  for(const hero of this.Heros){
-    // console.log(hero);
+  for (let i= 0; i < this.Heros.length; i++){
+    const hero = this.Heros[i];
     const nombre = hero.nombre.toLowerCase();
     // Método para buscar una cadena dentro de otra cadena de carácteres.
     if(nombre.indexOf(termino)>= 0){
+      hero.index = i;
       Resultados.push(hero)
     }
   }

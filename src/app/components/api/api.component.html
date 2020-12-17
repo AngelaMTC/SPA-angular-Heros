@@ -1,0 +1,88 @@
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Biografía</th>
+            <th>Img</th>
+            <th>Aparición</th>
+            <th>Casa</th>
+            <th>EDITAR</th>
+            <th>ELIMINAR</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let H of heroes">
+        <tr>
+            <td>{{H.nombre}}</td>
+            <td>{{H.bio}}</td>
+            <td>{{H.img}}</td>
+            <td>{{H.aparicion}}</td>
+            <td>{{H.casa}}</td>
+            <td><button class="btn btn-dark" (click)="getId(H._id)">SELECCIONAR</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<form (ngSubmit)="postHeroes(form)" #form="ngForm">
+    <div class="d-flex">
+        <label>Nombre</label>
+        <input type="text" name="nombre" [(ngModel)]="apis.nombre" #nombre="ngModel">
+    </div>
+    <div>
+        <label>Biografía</label>
+        <input type="text" name="bio" [(ngModel)]="apis.bio" #bio="ngModel">
+    </div>
+    <div class="d-flex">
+        <label>Imagen</label>
+        <input type="file" name="img" [(ngModel)]="apis.img" #img="ngModel">
+    </div>
+    <div>
+        <label>Aparición</label>
+        <input type="text" name="aparicion" [(ngModel)]="apis.aparicion" #aparicion="ngModel">
+    </div>
+    <button type="submit">ENVIAR</button>
+    <div class="d-flex">
+        <label>Casa</label>
+        <input type="text" name="casa" [(ngModel)]="apis.casa" #casa="ngModel">
+    </div>
+    <br>
+</form>
+
+<br>
+<br>
+<br>
+<br>
+
+<form #form="ngForm">
+    <div class="d-flex">
+        <label>Nombre</label>
+        <input type="text" name="nombre" [(ngModel)]="apis.nombre" #nombre="ngModel">
+    </div>
+    <div>
+        <label>Biografía</label>
+        <input type="text" name="bio" [(ngModel)]="apis.bio" #bio="ngModel">
+    </div>
+    <div class="d-flex">
+        <label>Imagen</label>
+        <input type="file" name="img" [(ngModel)]="apis.img" #img="ngModel">
+    </div>
+    <div>
+        <label>Aparición</label>
+        <input type="text" name="aparicion" [(ngModel)]="apis.aparicion" #aparicion="ngModel">
+    </div>
+    <div class="d-flex">
+        <label>Casa</label>
+        <input type="text" name="casa" [(ngModel)]="apis.casa" #casa="ngModel">
+    </div>
+    <br>
+</form>
+
+<br>
+
+<button (click)="putHeroes()">Actualizar</button>
+<button (click)="deleteHeroes()">Eliminar</button>
+
+<br>
+<br>
+<br>
+<br>
+<br>

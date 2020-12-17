@@ -1,0 +1,12 @@
+<div class="card" [ngClass]="{'border-primary' : PadreHero.casa == 'DC' , 'border-danger' : PadreHero.casa == 'Marvel'}">
+    <img src="{{PadreHero.img}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{PadreHero.nombre | uppercase}}</h5>
+      <p class="card-text">{{PadreHero.bio | slice:0:100}}</p>
+      <small>{{PadreHero.aparicion}}</small>  
+      <!-- <small>{{PadreHero.casa}}</small> -->
+  </div>
+  <!--[routerLink]= "['/hero', i] La coma después de hero la usamos para pasar 
+    como parámetro el índice como parámetros de la ruta. -->
+    <button (click)= "Navegar()"class="btn btn-outline-primary btn-block">Ver más...</button>
+  </div>
